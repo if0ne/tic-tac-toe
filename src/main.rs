@@ -1,7 +1,8 @@
 use rand::Rng;
 use tic_tac_toe::{
     game::{PlayerType, TicTacToe},
-    models::mark::Mark, util::clear_terminal_screen,
+    models::mark::Mark,
+    util::clear_terminal_screen,
 };
 
 fn main() {
@@ -55,7 +56,7 @@ pub fn get_mode() -> (PlayerType, PlayerType) {
     let mut input_string = String::new();
     let variant = loop {
         clear_terminal_screen();
-        
+
         input_string.clear();
 
         println!("Choose game mode:");

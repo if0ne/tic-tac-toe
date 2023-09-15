@@ -1,4 +1,7 @@
-use crate::{models::{cell::Cell, game_state::GameState, grid::Grid, mark::Mark}, util::clear_terminal_screen};
+use crate::{
+    models::{cell::Cell, game_state::GameState, grid::Grid, mark::Mark},
+    util::clear_terminal_screen,
+};
 
 use super::renderer::Renderer;
 
