@@ -1,7 +1,7 @@
 use rand::Rng;
 use tic_tac_toe::{
     game::{PlayerType, TicTacToe},
-    models::mark::Mark,
+    models::mark::Mark, util::clear_terminal_screen,
 };
 
 fn main() {
@@ -16,7 +16,8 @@ fn main() {
 pub fn get_map_size() -> usize {
     let mut input_string = String::new();
     let variant = loop {
-        print!("{esc}[2J{esc}[1;1H", esc = 27 as char); // Clear screen
+        clear_terminal_screen();
+
         input_string.clear();
 
         let mut input_string = String::new();
@@ -53,7 +54,8 @@ pub fn get_map_size() -> usize {
 pub fn get_mode() -> (PlayerType, PlayerType) {
     let mut input_string = String::new();
     let variant = loop {
-        print!("{esc}[2J{esc}[1;1H", esc = 27 as char); // Clear screen
+        clear_terminal_screen();
+        
         input_string.clear();
 
         println!("Choose game mode:");

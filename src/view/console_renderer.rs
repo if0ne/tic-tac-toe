@@ -1,4 +1,4 @@
-use crate::models::{cell::Cell, game_state::GameState, grid::Grid, mark::Mark};
+use crate::{models::{cell::Cell, game_state::GameState, grid::Grid, mark::Mark}, util::clear_terminal_screen};
 
 use super::renderer::Renderer;
 
@@ -55,7 +55,7 @@ pub struct ConsoleRenderer;
 
 impl Renderer for ConsoleRenderer {
     fn render(&self, game_state: &GameState) {
-        print!("{esc}[2J{esc}[1;1H", esc = 27 as char); // Clear screen
+        clear_terminal_screen();
 
         println!("{}", game_state.grid());
     }
